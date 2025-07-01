@@ -60,15 +60,15 @@ function Cadastro() {
         console.log('Enviando para o back:', usuarioParaCadastro)
 
         await cadastrarUsuario(`/usuarios/cadastrar`, usuarioParaCadastro, setUsuario)
-        alert('Usuário cadastrado com sucesso!')
+        ToastAlerta('Usuário cadastrado com sucesso!')
       } catch (error) {
         console.error('Erro ao cadastrar:', error)
-        alert('Erro ao cadastrar o usuário!')
+        ToastAlerta('Erro ao cadastrar o usuário!')
       }
 
       setIsLoading(false)
     } else {
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
+      ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
       setUsuario({ ...usuario, senha: '' })
       setConfirmaSenha('')
     }
